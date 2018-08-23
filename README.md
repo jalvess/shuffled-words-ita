@@ -1,2 +1,2 @@
-# sortedwords-ita
+# Sortedwords-ita
 Projeto final do ITA-Coursera
