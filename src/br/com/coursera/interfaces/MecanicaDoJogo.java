@@ -48,4 +48,10 @@ public interface MecanicaDoJogo {
 	 *  void 
 	 */
 	public void iniciarJogo();
+	
+	/**
+	 * @return boolean 
+	 */
+	public boolean isFimDeJogo();
+	
 }

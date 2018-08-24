@@ -15,6 +15,9 @@ import br.com.coursera.interfaces.MecanicaDoJogo;
  */
 public class FabricaMecanicaDoJogo {
 	/**
+	 * Cria e retorna uma instância de uma implementação de MecânicaDoJogo baseada
+	 * na implementação randômica retornada pela FabricaEmbalharadores
+	 * 
 	 * @return MecanicaDoJogo
 	 */
 	public static MecanicaDoJogo criaMecanicaDoJogo() {

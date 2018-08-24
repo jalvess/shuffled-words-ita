@@ -31,7 +31,7 @@ public class BancoDePalavras {
 	 * @return String
 	 */
 	private static String selecionaPalavraDeTexto(String conteudo) {
-		String[] palavras = Arrays.toString(conteudo.split(" ")).replaceAll("[^\\w\\s]", "").split(" ");
+		String[] palavras = Arrays.toString(conteudo.split(" ")).replaceAll("[^\\w\\sÁ„‡·ÛıÚÈÍ«√¡¿”’… ]", "").split(" ");
 		int qtdPalavras = palavras.length - 1;
 		if (conteudo.length() == 0) {
 			throw new ArquivoVazioException("Recurso n„o possui palavras");

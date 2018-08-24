@@ -12,6 +12,8 @@ import java.util.Scanner;
 import br.com.coursera.interfaces.Arquivo;
 
 /**
+ * Implementação de Arquivo
+ * @see Arquivo
  * @author Jose
  *
  */
@@ -19,6 +21,8 @@ public class CriadorDeArquivoTXT implements Arquivo {
 	private static final String PALAVRAS_RESERVAS = "BATMAN MULHER HOMEM CABEÇA COELHO PERSONAGEM COMPUTADOR PESSOA MONSTRO CORRIDA LAÇO CAVALO CARRO BEBIDA";
 
 	/**
+	 * Cria um arquivo TXT com o conteúdo passado por parâmetro
+	 * 
 	 * @see br.com.coursera.interfaces.Arquivo#criaArquivo(java.io.File,
 	 *      java.lang.String)
 	 * @param file
@@ -38,6 +42,9 @@ public class CriadorDeArquivoTXT implements Arquivo {
 	}
 
 	/**
+	 * Recupera o conteúdo de um arquivo TXT e o retorna como String. Caso o arquivo
+	 * TXT não exista, um novo é criado
+	 * 
 	 * @see br.com.coursera.interfaces.Arquivo#getConteudo(java.lang.String)
 	 * @param arquivo
 	 * @return

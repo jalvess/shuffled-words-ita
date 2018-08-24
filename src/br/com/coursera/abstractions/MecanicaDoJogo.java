@@ -3,7 +3,6 @@
  */
 package br.com.coursera.abstractions;
 
-import br.com.coursera.BancoDePalavras;
 import br.com.coursera.interfaces.Embaralhador;
 
 /**
@@ -11,10 +10,14 @@ import br.com.coursera.interfaces.Embaralhador;
  *
  */
 public abstract class MecanicaDoJogo {
+	private boolean fimDeJogo;
 	private String palavraOriginal;
 	private String palavraEmbaralhada;
 	private Embaralhador embaralhador;
-	private int tentativas;
+
+	public boolean isFimDeJogo() {
+		return this.fimDeJogo;
+	}
 
 	/**
 	 * @param embaralhador
@@ -24,16 +27,32 @@ public abstract class MecanicaDoJogo {
 	}
 
 	/**
+	 * @return Embaralhador
+	 */
+	public Embaralhador getEmbaralhador() {
+		return this.embaralhador;
+	}
+
+	/**
+	 * @param palavraOriginal void
+	 */
+	public void setPalavraOriginal(String palavraOriginal) {
+		this.palavraOriginal = palavraOriginal;
+	}
+
+	/**
+	 * @param palavraEmbaralhada void
+	 */
+	public void setPalavraEmbaralhada(String palavraEmbaralhada) {
+		this.palavraEmbaralhada = palavraEmbaralhada;
+	}
+
+	/**
 	 * @return String
 	 */
 	public String getPalavraOriginal() {
 		return this.palavraOriginal;
 	}
-	
-	public int reiniciaTentativa() {
-		return 0;
-	}
-
 
 	/**
 	 * @return String
@@ -42,12 +61,15 @@ public abstract class MecanicaDoJogo {
 		return this.palavraEmbaralhada;
 	}
 
-	public void iniciarJogo() {
-		System.out.println("========================== PALAVRA EMBARALHADA =================================");
-		this.tentativas = reiniciaTentativa();
-		this.palavraOriginal = BancoDePalavras.getPalavra();
-		this.palavraEmbaralhada = embaralhador.sortWord(getPalavraOriginal());
-		System.out.println(toString());
+	/**
+	 *  void 
+	 */
+	public void palpiteCorreto() {
+		System.out.println("\nACERTOU !!!\n");
+		this.fimDeJogo = true;
 	}
-
+	
+	public void setFimDeJogo(boolean isFim) {
+		this.fimDeJogo = isFim;
+	}
 }

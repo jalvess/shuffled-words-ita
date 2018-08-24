@@ -16,6 +16,7 @@ import br.com.coursera.exceptions.ArquivoVazioException;
 import br.com.coursera.interfaces.Arquivo;
 
 /**
+ * 
  * @author Jose
  *
  */
@@ -24,6 +25,8 @@ public class CriadorDeArquivoXML implements Arquivo {
 			"COMPUTADOR", "PESSOA", "MONSTRO ", "CORRIDA", "LAÇO", "CAVALO", "CARRO ", "BEBIDA" };
 
 	/**
+	 * Cria um arquivo XML contendo as palavras passadas como parâmetro
+	 * 
 	 * @see br.com.coursera.interfaces.Arquivo#criaArquivo(java.io.File,
 	 *      java.lang.String)
 	 * @param file
@@ -46,6 +49,9 @@ public class CriadorDeArquivoXML implements Arquivo {
 	}
 
 	/**
+	 * Lê e obtem os dados de um arquivo XML cujo o nome é passado por parâmetro.
+	 * Caso o mesmo não exista, um novo é criado e populado 
+	 * 
 	 * @see br.com.coursera.interfaces.Arquivo#getConteudo(java.lang.String)
 	 * @param arquivo
 	 * @return

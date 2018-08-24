@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"br.com.coursera"},{"l":"br.com.coursera.abstractions"},{"l":"br.com.coursera.exceptions"},{"l":"br.com.coursera.factories"},{"l":"br.com.coursera.implementations"},{"l":"br.com.coursera.interfaces"},{"l":"br.com.coursera.testes"}]

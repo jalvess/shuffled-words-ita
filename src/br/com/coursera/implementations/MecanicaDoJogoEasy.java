@@ -3,6 +3,7 @@
  */
 package br.com.coursera.implementations;
 
+import br.com.coursera.BancoDePalavras;
 import br.com.coursera.interfaces.Embaralhador;
 import br.com.coursera.interfaces.MecanicaDoJogo;
 
@@ -11,7 +12,7 @@ import br.com.coursera.interfaces.MecanicaDoJogo;
  *
  */
 public class MecanicaDoJogoEasy extends br.com.coursera.abstractions.MecanicaDoJogo implements MecanicaDoJogo {
-	private final int TENTATIVAS_INICIAIS = 3;
+	private final int TENTATIVAS_INICIAIS = 5;
 	private int tentativas = TENTATIVAS_INICIAIS;
 	private final String DIFICULDADE = "Fácil";
 
@@ -22,6 +23,16 @@ public class MecanicaDoJogoEasy extends br.com.coursera.abstractions.MecanicaDoJ
 		super(embaralhador);
 	}
 
+	@Override
+	public void iniciarJogo() {
+		System.out.println("========================== PALAVRA EMBARALHADA =================================");
+		this.tentativas = TENTATIVAS_INICIAIS;
+		setFimDeJogo(false);
+		setPalavraOriginal(BancoDePalavras.getPalavra());
+		setPalavraEmbaralhada(getEmbaralhador().sortWord(getPalavraOriginal()));
+		System.out.println(toString());
+	}
+
 	/**
 	 * @see br.com.coursera.interfaces.MecanicaDoJogo#getTentativas()
 	 * @return
@@ -30,14 +41,6 @@ public class MecanicaDoJogoEasy extends br.com.coursera.abstractions.MecanicaDoJ
 	public int getTentativas() {
 		return tentativas;
 	}
-	
-	/** @see br.com.coursera.abstractions.MecanicaDoJogo#reiniciaTentativa()
-	 	@return 
-	 **/
-	@Override
-	public int reiniciaTentativa() {
-		return TENTATIVAS_INICIAIS;
-	}
 
 	@Override
 	public void palpiteErrado() {
@@ -45,8 +48,8 @@ public class MecanicaDoJogoEasy extends br.com.coursera.abstractions.MecanicaDoJ
 		System.out.println("\nPalpite errado\n");
 		System.out.println(toString());
 		if (tentativas == 0) {
-			System.out.println("\n============== GAME OVER ===================\n");
-			iniciarJogo();
+			setFimDeJogo(true);
+			System.out.println("========================== GAME OVER =================================");
 		}
 	}
 
@@ -76,10 +79,4 @@ public class MecanicaDoJogoEasy extends br.com.coursera.abstractions.MecanicaDoJ
 		return "Dificuldade: " + getDificuldade() + "\n" + "Tentativas: " + getTentativas();
 	}
 
-	/** @see br.com.coursera.interfaces.MecanicaDoJogo#palpiteCorreto()
-	 	 
-	 **/
-	@Override
-	public void palpiteCorreto() {
-	}
 }

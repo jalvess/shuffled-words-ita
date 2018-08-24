@@ -13,6 +13,11 @@ import br.com.coursera.interfaces.Embaralhador;
  */
 public class FabricaEmbaralhadores {
 
+	/**
+	 * Cria e retorna uma instância de Embaralhador
+	 * 
+	 * @return Embaralhador
+	 */
 	public static Embaralhador criaEmbaralhador() {
 		String dificuldade = getRandomDificuldade();
 		try {
@@ -36,10 +41,10 @@ public class FabricaEmbaralhadores {
 			return "Easy";
 		}
 		case 1: {
-			return "Easy";
+			return "Normal";
 		}
 		default: {
-			return "Easy";
+			return "Normal";
 		}
 		}
 	}
