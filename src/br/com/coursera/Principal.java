@@ -18,6 +18,7 @@ public class Principal {
 
 	/**
 	 * Inicia o jogo de palavras embaralhadas
+	 * 
 	 * @param args void
 	 */
 	public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class Principal {
 		while (scanner.hasNext() && "y".equalsIgnoreCase(scanner.nextLine())) {
 			MecanicaDoJogo mecanica = FabricaMecanicaDoJogo.criaMecanicaDoJogo();
 			mecanica.iniciarJogo();
-			System.out.println("\nPALAVRA: " +  mecanica.getPalavraEmbaralhada());
+			System.out.println("\nPALAVRA: " + mecanica.getPalavraEmbaralhada());
 			while (scanner.hasNext()) {
 				mecanica.darPalpite(scanner.nextLine());
 				if (mecanica.isFimDeJogo())
